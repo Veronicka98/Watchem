@@ -13,6 +13,8 @@ import models.Rating;
 import play.db.jpa.Model;
 
 public class Movie extends Model {
+	
+	private int movieID;
 
 	private String title;
 	private String videoReleaseDate;
@@ -20,7 +22,10 @@ public class Movie extends Model {
 	private String url;
 	private String genre;
 	
+	public List<Rating> ratings;
+	
 	public Movie() {
+		ratings = new ArrayList<Rating>();
 	}
 	
 	public Movie(String title,int year, String videoReleaseDate, String url,String genre) {
@@ -29,6 +34,7 @@ public class Movie extends Model {
 		this.videoReleaseDate = videoReleaseDate;
 		this.url = url;
 		this.genre = genre;
+		ratings = new ArrayList<Rating>();
 	}
 	
 	@Override  
@@ -71,6 +77,17 @@ public class Movie extends Model {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	
-	
+	public void setMovieID(int movieID) {
+		this.movieID = movieID;
+	}
+	public int getMovieID() {
+		return movieID;
+	}
+	 public List<Rating> getRatings() {
+		  return ratings;
+	  }
+	  
+	  public void setRatings(List<Rating> rating) {
+		  ratings = rating;
+	  }
 }

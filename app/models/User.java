@@ -33,6 +33,8 @@ public class User extends Model{
 	  
 	  public boolean logged_in;
 	  
+	  public List<Rating> ratings;
+	  
 	  public User(String firstName, String lastName,int age,String gender, String occupation)
 	  {
 	    this.firstName = firstName;
@@ -42,10 +44,12 @@ public class User extends Model{
 	    this.occupation = occupation;
 	    email = firstName+occupation +"@mail.ru";
 	    password = "secret";
+	    ratings = new ArrayList<Rating>();
 	    
 	  }
 	  
 	  public User() {
+		  ratings = new ArrayList<Rating>();
 	  }
 	  
 	  
@@ -141,6 +145,14 @@ public class User extends Model{
 	  public boolean checkPassword(String password)
 	  {
 	    return this.password.equals(password);
+	  }
+	  
+	  public List<Rating> getRatings() {
+		  return ratings;
+	  }
+	  
+	  public void setRatings(List<Rating> rating) {
+		  ratings = rating;
 	  }
 	  
 	  

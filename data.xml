@@ -1,432 +1,499 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_91" class="java.beans.XMLDecoder">
- <object class="java.util.ArrayList">
-  <void method="add">
-   <object class="java.util.Hashtable">
-    <void method="put">
-     <int>5</int>
-     <object class="models.User" id="User0">
-      <void property="age">
-       <int>33</int>
-      </void>
-      <void property="email">
-       <string>Jennaother@mail.ru</string>
-      </void>
-      <void property="firstName">
-       <string>Jenna</string>
-      </void>
-      <void property="gender">
-       <string>F</string>
-      </void>
-      <void property="lastName">
-       <string>Parker</string>
-      </void>
-      <void property="occupation">
-       <string>other</string>
-      </void>
-      <void property="password">
-       <string>secret</string>
-      </void>
-      <void property="userID">
-       <int>5</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>4</int>
-     <object class="models.User" id="User1">
-      <void property="age">
-       <int>24</int>
-      </void>
-      <void property="email">
-       <string>Olivertechnician@mail.ru</string>
-      </void>
-      <void property="firstName">
-       <string>Oliver</string>
-      </void>
-      <void property="gender">
-       <string>M</string>
-      </void>
-      <void property="lastName">
-       <string>George</string>
-      </void>
-      <void property="occupation">
-       <string>technician</string>
-      </void>
-      <void property="password">
-       <string>secret</string>
-      </void>
-      <void property="userID">
-       <int>4</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>3</int>
-     <object class="models.User" id="User2">
-      <void property="age">
-       <int>23</int>
-      </void>
-      <void property="email">
-       <string>Gregorywriter@mail.ru</string>
-      </void>
-      <void property="firstName">
-       <string>Gregory</string>
-      </void>
-      <void property="gender">
-       <string>M</string>
-      </void>
-      <void property="lastName">
-       <string>Newton</string>
-      </void>
-      <void property="occupation">
-       <string>writer</string>
-      </void>
-      <void property="password">
-       <string>secret</string>
-      </void>
-      <void property="userID">
-       <int>3</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>2</int>
-     <object class="models.User" id="User3">
-      <void property="age">
-       <int>53</int>
-      </void>
-      <void property="email">
-       <string>Melodyother@mail.ru</string>
-      </void>
-      <void property="firstName">
-       <string>Melody</string>
-      </void>
-      <void property="gender">
-       <string>F</string>
-      </void>
-      <void property="lastName">
-       <string>Roberson</string>
-      </void>
-      <void property="occupation">
-       <string>other</string>
-      </void>
-      <void property="password">
-       <string>secret</string>
-      </void>
-      <void property="userID">
-       <int>2</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>1</int>
-     <object class="models.User" id="User4">
-      <void property="age">
-       <int>24</int>
-      </void>
-      <void property="email">
-       <string>Leonardtechnician@mail.ru</string>
-      </void>
-      <void property="firstName">
-       <string>Leonard</string>
-      </void>
-      <void property="gender">
-       <string>M</string>
-      </void>
-      <void property="lastName">
-       <string>Hernandez</string>
-      </void>
-      <void property="occupation">
-       <string>technician</string>
-      </void>
-      <void property="password">
-       <string>secret</string>
-      </void>
-      <void property="userID">
-       <int>1</int>
-      </void>
-     </object>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="java.util.HashMap">
-    <void method="put">
-     <string>Melodyother@mail.ru</string>
-     <object idref="User3"/>
-    </void>
-    <void method="put">
-     <string>Leonardtechnician@mail.ru</string>
-     <object idref="User4"/>
-    </void>
-    <void method="put">
-     <string>Gregorywriter@mail.ru</string>
-     <object idref="User2"/>
-    </void>
-    <void method="put">
-     <string>Olivertechnician@mail.ru</string>
-     <object idref="User1"/>
-    </void>
-    <void method="put">
-     <string>Jennaother@mail.ru</string>
-     <object idref="User0"/>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="java.util.Hashtable">
-    <void method="put">
-     <int>10</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Thriller</string>
-      </void>
-      <void property="title">
-       <string>Richard III (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>22-Jan-1996</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>9</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Documentary</string>
-      </void>
-      <void property="title">
-       <string>Dead Man Walking (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>8</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Documentary</string>
-      </void>
-      <void property="title">
-       <string>Babe (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>7</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Romance</string>
-      </void>
-      <void property="title">
-       <string>Twelve Monkeys (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>6</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Documentary</string>
-      </void>
-      <void property="title">
-       <string>Shanghai Triad (Yao a yao yao dao waipo qiao) (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>5</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Sci-Fi</string>
-      </void>
-      <void property="title">
-       <string>Copycat (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>4</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Documentary</string>
-      </void>
-      <void property="title">
-       <string>Get Shorty (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>3</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Sci-Fi</string>
-      </void>
-      <void property="title">
-       <string>Four Rooms (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>2</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Sci-Fi</string>
-      </void>
-      <void property="title">
-       <string>GoldenEye (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-    <void method="put">
-     <int>1</int>
-     <object class="models.Movie">
-      <void property="genre">
-       <string>Children&apos;s</string>
-      </void>
-      <void property="title">
-       <string>Toy Story (1995)</string>
-      </void>
-      <void property="videoReleaseDate">
-       <string>01-Jan-1995</string>
-      </void>
-      <void property="year">
-       <int>1995</int>
-      </void>
-     </object>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="java.util.Hashtable">
-    <void method="put">
-     <int>18</int>
-     <string>Western</string>
-    </void>
-    <void method="put">
-     <int>17</int>
-     <string>War</string>
-    </void>
-    <void method="put">
-     <int>16</int>
-     <string>Thriller</string>
-    </void>
-    <void method="put">
-     <int>15</int>
-     <string>Sci-Fi</string>
-    </void>
-    <void method="put">
-     <int>14</int>
-     <string>Romance</string>
-    </void>
-    <void method="put">
-     <int>13</int>
-     <string>Mystery</string>
-    </void>
-    <void method="put">
-     <int>12</int>
-     <string>Musical</string>
-    </void>
-    <void method="put">
-     <int>11</int>
-     <string>Horror</string>
-    </void>
-    <void method="put">
-     <int>10</int>
-     <string>Film-Noir</string>
-    </void>
-    <void method="put">
-     <int>9</int>
-     <string>Fantasy</string>
-    </void>
-    <void method="put">
-     <int>8</int>
-     <string>Drama</string>
-    </void>
-    <void method="put">
-     <int>7</int>
-     <string>Documentary</string>
-    </void>
-    <void method="put">
-     <int>6</int>
-     <string>Crime</string>
-    </void>
-    <void method="put">
-     <int>5</int>
-     <string>Comedy</string>
-    </void>
-    <void method="put">
-     <int>4</int>
-     <string>Children&apos;s</string>
-    </void>
-    <void method="put">
-     <int>3</int>
-     <string>Animation</string>
-    </void>
-    <void method="put">
-     <int>2</int>
-     <string>Adventure</string>
-    </void>
-    <void method="put">
-     <int>1</int>
-     <string>Action</string>
-    </void>
-    <void method="put">
-     <int>0</int>
-     <string>unknown</string>
-    </void>
-   </object>
-  </void>
- </object>
-</java>
+<object-stream>
+  <java.util.Stack serialization="custom">
+    <unserializable-parents/>
+    <vector>
+      <default>
+        <capacityIncrement>0</capacityIncrement>
+        <elementCount>5</elementCount>
+        <elementData>
+          <hashtable>
+            <entry>
+              <int>5</int>
+              <models.User>
+                <userID>5</userID>
+                <firstName>Jenna</firstName>
+                <lastName>Parker</lastName>
+                <age>33</age>
+                <gender>F</gender>
+                <occupation>other</occupation>
+                <email>Jennaother@mail.ru</email>
+                <password>secret</password>
+                <logged__in>false</logged__in>
+                <ratings/>
+              </models.User>
+            </entry>
+            <entry>
+              <int>4</int>
+              <models.User>
+                <userID>4</userID>
+                <firstName>Oliver</firstName>
+                <lastName>George</lastName>
+                <age>24</age>
+                <gender>M</gender>
+                <occupation>technician</occupation>
+                <email>Olivertechnician@mail.ru</email>
+                <password>secret</password>
+                <logged__in>false</logged__in>
+                <ratings/>
+              </models.User>
+            </entry>
+            <entry>
+              <int>3</int>
+              <models.User>
+                <userID>3</userID>
+                <firstName>Gregory</firstName>
+                <lastName>Newton</lastName>
+                <age>23</age>
+                <gender>M</gender>
+                <occupation>writer</occupation>
+                <email>Gregorywriter@mail.ru</email>
+                <password>secret</password>
+                <logged__in>false</logged__in>
+                <ratings/>
+              </models.User>
+            </entry>
+            <entry>
+              <int>2</int>
+              <models.User>
+                <userID>2</userID>
+                <firstName>Melody</firstName>
+                <lastName>Roberson</lastName>
+                <age>53</age>
+                <gender>F</gender>
+                <occupation>other</occupation>
+                <email>Melodyother@mail.ru</email>
+                <password>secret</password>
+                <logged__in>false</logged__in>
+                <ratings/>
+              </models.User>
+            </entry>
+            <entry>
+              <int>1</int>
+              <models.User>
+                <userID>1</userID>
+                <firstName>Leonard</firstName>
+                <lastName>Hernandez</lastName>
+                <age>24</age>
+                <gender>M</gender>
+                <occupation>technician</occupation>
+                <email>Leonardtechnician@mail.ru</email>
+                <password>secret</password>
+                <logged__in>false</logged__in>
+                <ratings/>
+              </models.User>
+            </entry>
+          </hashtable>
+          <map>
+            <entry>
+              <string>Melodyother@mail.ru</string>
+              <models.User reference="../../../hashtable/entry[4]/models.User"/>
+            </entry>
+            <entry>
+              <string>Leonardtechnician@mail.ru</string>
+              <models.User reference="../../../hashtable/entry[5]/models.User"/>
+            </entry>
+            <entry>
+              <string>Gregorywriter@mail.ru</string>
+              <models.User reference="../../../hashtable/entry[3]/models.User"/>
+            </entry>
+            <entry>
+              <string>Olivertechnician@mail.ru</string>
+              <models.User reference="../../../hashtable/entry[2]/models.User"/>
+            </entry>
+            <entry>
+              <string>Jennaother@mail.ru</string>
+              <models.User reference="../../../hashtable/entry/models.User"/>
+            </entry>
+          </map>
+          <hashtable>
+            <entry>
+              <int>10</int>
+              <models.Movie>
+                <movieID>10</movieID>
+                <title>Richard III (1995)</title>
+                <videoReleaseDate>22-Jan-1996</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?Richard%20III%20(1995)</url>
+                <genre>Thriller</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>9</int>
+              <models.Movie>
+                <movieID>9</movieID>
+                <title>Dead Man Walking (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?Dead%20Man%20Walking%20(1995)</url>
+                <genre>Documentary</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>8</int>
+              <models.Movie>
+                <movieID>8</movieID>
+                <title>Babe (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?Babe%20(1995)</url>
+                <genre>Documentary</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>7</int>
+              <models.Movie>
+                <movieID>7</movieID>
+                <title>Twelve Monkeys (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?Twelve%20Monkeys%20(1995)</url>
+                <genre>Romance</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>6</int>
+              <models.Movie>
+                <movieID>6</movieID>
+                <title>Shanghai Triad (Yao a yao yao dao waipo qiao) (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/Title?Yao+a+yao+yao+dao+waipo+qiao+(1995)</url>
+                <genre>Documentary</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>5</int>
+              <models.Movie>
+                <movieID>5</movieID>
+                <title>Copycat (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?Copycat%20(1995)</url>
+                <genre>Sci-Fi</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>4</int>
+              <models.Movie>
+                <movieID>4</movieID>
+                <title>Get Shorty (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?Get%20Shorty%20(1995)</url>
+                <genre>Documentary</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>3</int>
+              <models.Movie>
+                <movieID>3</movieID>
+                <title>Four Rooms (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?Four%20Rooms%20(1995)</url>
+                <genre>Sci-Fi</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>2</int>
+              <models.Movie>
+                <movieID>2</movieID>
+                <title>GoldenEye (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?GoldenEye%20(1995)</url>
+                <genre>Sci-Fi</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+            <entry>
+              <int>1</int>
+              <models.Movie>
+                <movieID>1</movieID>
+                <title>Toy Story (1995)</title>
+                <videoReleaseDate>01-Jan-1995</videoReleaseDate>
+                <year>1995</year>
+                <url>http://us.imdb.com/M/title-exact?Toy%20Story%20(1995)</url>
+                <genre>Children&apos;s</genre>
+                <ratings/>
+              </models.Movie>
+            </entry>
+          </hashtable>
+          <hashtable>
+            <entry>
+              <int>18</int>
+              <string>Western</string>
+            </entry>
+            <entry>
+              <int>17</int>
+              <string>War</string>
+            </entry>
+            <entry>
+              <int>16</int>
+              <string>Thriller</string>
+            </entry>
+            <entry>
+              <int>15</int>
+              <string>Sci-Fi</string>
+            </entry>
+            <entry>
+              <int>14</int>
+              <string>Romance</string>
+            </entry>
+            <entry>
+              <int>13</int>
+              <string>Mystery</string>
+            </entry>
+            <entry>
+              <int>12</int>
+              <string>Musical</string>
+            </entry>
+            <entry>
+              <int>11</int>
+              <string>Horror</string>
+            </entry>
+            <entry>
+              <int>10</int>
+              <string>Film-Noir</string>
+            </entry>
+            <entry>
+              <int>9</int>
+              <string>Fantasy</string>
+            </entry>
+            <entry>
+              <int>8</int>
+              <string>Drama</string>
+            </entry>
+            <entry>
+              <int>7</int>
+              <string>Documentary</string>
+            </entry>
+            <entry>
+              <int>6</int>
+              <string>Crime</string>
+            </entry>
+            <entry>
+              <int>5</int>
+              <string>Comedy</string>
+            </entry>
+            <entry>
+              <int>4</int>
+              <string>Children&apos;s</string>
+            </entry>
+            <entry>
+              <int>3</int>
+              <string>Animation</string>
+            </entry>
+            <entry>
+              <int>2</int>
+              <string>Adventure</string>
+            </entry>
+            <entry>
+              <int>1</int>
+              <string>Action</string>
+            </entry>
+            <entry>
+              <int>0</int>
+              <string>unknown</string>
+            </entry>
+          </hashtable>
+          <list>
+            <models.Rating>
+              <object1>4</object1>
+              <object2>10</object2>
+              <rating>5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>10</object2>
+              <rating>-5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>1</object1>
+              <object2>1</object2>
+              <rating>5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>2</object1>
+              <object2>1</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>3</object1>
+              <object2>1</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>4</object1>
+              <object2>1</object2>
+              <rating>5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>1</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>1</object1>
+              <object2>2</object2>
+              <rating>5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>2</object1>
+              <object2>2</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>3</object1>
+              <object2>2</object2>
+              <rating>-5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>2</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>1</object1>
+              <object2>3</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>2</object1>
+              <object2>3</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>3</object1>
+              <object2>3</object2>
+              <rating>-3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>4</object1>
+              <object2>3</object2>
+              <rating>5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>3</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>2</object1>
+              <object2>4</object2>
+              <rating>-5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>3</object1>
+              <object2>4</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>4</object1>
+              <object2>4</object2>
+              <rating>5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>4</object2>
+              <rating>-5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>1</object1>
+              <object2>5</object2>
+              <rating>-3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>3</object1>
+              <object2>5</object2>
+              <rating>-5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>5</object2>
+              <rating>-3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>4</object1>
+              <object2>6</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>1</object1>
+              <object2>7</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>2</object1>
+              <object2>7</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>3</object1>
+              <object2>7</object2>
+              <rating>-5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>4</object1>
+              <object2>7</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>7</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>3</object1>
+              <object2>8</object2>
+              <rating>5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>4</object1>
+              <object2>8</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>8</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>1</object1>
+              <object2>9</object2>
+              <rating>1</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>5</object1>
+              <object2>9</object2>
+              <rating>-5</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>1</object1>
+              <object2>10</object2>
+              <rating>3</rating>
+            </models.Rating>
+            <models.Rating>
+              <object1>2</object1>
+              <object2>10</object2>
+              <rating>5</rating>
+            </models.Rating>
+          </list>
+          <null/>
+          <null/>
+          <null/>
+          <null/>
+          <null/>
+        </elementData>
+      </default>
+    </vector>
+  </java.util.Stack>
+</object-stream>

@@ -21,50 +21,18 @@ import play.db.jpa.Model;
 
 public class Data {
 	
-
-	public static List<Map> data = new ArrayList<Map>();
-	public static List<Rating> allRatings = new ArrayList<Rating>();
-	
-	public static Map<Integer, User> users = new Hashtable<>();
-	public static Map<String, User>   emailIndex      = new HashMap<>();
-	public static Map<Integer, Movie> movies = new Hashtable<>();
-	public static Map<Integer, String> genres = new Hashtable<>();
-	
-	
+	static RecommenderAPI r = new RecommenderAPI();
 	
 	public Data() {
 		
 	}
-	
-	public  void clearDatabase() 
-	  {
-	    users.clear();
-	    emailIndex.clear();
-	    movies.clear();
-	    genres.clear();
-	  }
 	
 	public static void loadOriginalData() throws Exception {
 		loadUsers();
 		loadGenres();
 		loadMovies();
 		addRatings();
-	}
-	
-	public static void saveData() throws Exception {
-		data.add(users);
-		data.add(emailIndex);
-		data.add(movies);
-		data.add(genres);
-		save();
-	}
-	
-	public static void retrieveData() throws Exception {
-		retrieve();
-		users = data.get(0);
-		emailIndex = data.get(1);
-		movies = data.get(2);
-		genres = data.get(3);
+		
 	}
 	
 	public static void loadUsers() throws Exception {
@@ -89,8 +57,8 @@ public class Data {
 	                
 	                User user = new User(userTokens[1], userTokens[2], Integer.parseInt(userTokens[3]), userTokens[4], userTokens[5]);
 	                user.setUserID(Integer.parseInt(userTokens[0]));
-	                users.put(Integer.parseInt(userTokens[0]),user);
-	                emailIndex.put(user.getEmail(), user);
+	                r.users.put(Integer.parseInt(userTokens[0]),user);
+	                r.emailIndex.put(user.getEmail(), user);
 	                
 	            }else
 	            {
@@ -117,7 +85,7 @@ public class Data {
 //	                System.out.println(genreTokens[0]+" "+
 //	                		genreTokens[1] );
 	                
-	                genres.put(Integer.parseInt(genreTokens[1]), genreTokens[0]);
+	                r.genres.put(Integer.parseInt(genreTokens[1]), genreTokens[0]);
 	                
 	            }else
 	            {
@@ -157,8 +125,9 @@ public class Data {
 	                while(matcher.find()){
 	                    year = Integer.parseInt(matcher.group(1));
 	                }
-	                Movie movie = new Movie(movieTokens[1],year, movieTokens[2], movieTokens[3], genres.get(genre));
-	                movies.put(Integer.parseInt(movieTokens[0]), movie);
+	                Movie movie = new Movie(movieTokens[1],year, movieTokens[2], movieTokens[3], r.genres.get(genre));
+	                movie.setMovieID(Integer.parseInt(movieTokens[0]));
+	                r.movies.put(Integer.parseInt(movieTokens[0]), movie);
 	                
 	            }else
 	            {
@@ -177,8 +146,7 @@ public class Data {
 	      //each field is separated(delimited) by a '|'
 	        String delims = "[|]";
 	        String ratings; 
-	        List<Rating> dupRatings = new ArrayList<Rating>();
-	        if(!users.isEmpty()) {
+	        if(!r.users.isEmpty()) {
 		        while ((ratings = inGenres.readLine()) != null) {
 	
 		            // parse user details string
@@ -193,15 +161,9 @@ public class Data {
 		               int movie = Integer.parseInt(ratingTokens[1]);
 		               int rating = Integer.parseInt(ratingTokens[2]);
 		               
-		               if(users.containsKey(user) && movies.containsKey(movie)) {
-		            	   for(Rating thisRating : allRatings) {
-		            		   if(thisRating.getObject1() == user && thisRating.getObject2() == movie) {
-		            			   dupRatings.add(thisRating);
-		            		   }
-		            	   }
-		            	   allRatings.add(new Rating(user, movie, rating));
-		               }
-		                
+		               removeDuplicateRatings(user, movie, rating);
+		               r.allRatings.add(new Rating(user, movie, rating));
+		               
 		            }else
 		            {
 		                throw new Exception("Invalid rating info length: "+ratingTokens.length);
@@ -210,43 +172,20 @@ public class Data {
 	        } else {
 	        	throw new Exception("User list is empty");
 	        }
-	        for(Rating rating : dupRatings) {
-	        	allRatings.remove(rating);
+	}
+	
+	public static void removeDuplicateRatings(int user, int movie, int rating) {
+		 List<Rating> dupRatings = new ArrayList<Rating>();
+		 if(r.users.containsKey(user) && r.movies.containsKey(movie)) {
+      	   for(Rating thisRating : r.allRatings) {
+      		   if(thisRating.getObject1() == user && thisRating.getObject2() == movie) {
+      			   dupRatings.add(thisRating);
+      		   }
+      	   }
+         }
+		 for(Rating thisRating : dupRatings) {
+	        	r.allRatings.remove(thisRating);
 	        }
-	}
-	
-	
-	public static void displayUserRatings(int userID) {
-		System.out.println(users.get(userID).getFirstName() + " rated the following movies: ");
-		for(Rating rating : allRatings) {
-			if(rating.getObject1() == userID) {
-				System.out.println("Movie: " + movies.get(rating.getObject2()).getTitle());
-				System.out.println("Rating: " + rating.getRating());
-			}
-		}
-	}
-	
-	public static void displayMovieRatings(int movieID) {
-		System.out.println("\n" + movies.get(movieID).getTitle()+" was rated by the following users:");
-		for(Rating rating : allRatings) {
-			if (rating.getObject2() == movieID) {
-				System.out.println("User: " + users.get(rating.getObject1()).getFirstName() + " " + users.get(rating.getObject2()).getLastName());
-				System.out.println("Rating: " + rating.getRating());
-			}
-		}
-	}
-	
-	
-	//XML//
-	
-	public static void save() throws Exception {
-		HandleXML.writeData(data,"data.xml");
-		HandleXML.writeRatings(allRatings,"ratings.xml");
-    }
-	
-	public static void retrieve() throws Exception {
-		data = HandleXML.readData("data.xml");
-		allRatings = HandleXML.readRatings("ratings.xml");
 	}
 	
 	
