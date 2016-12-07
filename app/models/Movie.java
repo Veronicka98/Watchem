@@ -86,8 +86,10 @@ public class Movie extends Model {
 	 public List<Rating> getRatings() {
 		  return ratings;
 	  }
-	  
 	  public void setRatings(List<Rating> rating) {
 		  ratings = rating;
-	  }
+	 }
+	public void addRating(Rating rating) {
+		ratings.add(rating);
+	}
 }

@@ -34,6 +34,9 @@ public class User extends Model{
 	  public boolean logged_in;
 	  
 	  public List<Rating> ratings;
+	  public List<Rating> differentRatings;
+	  
+	  private double similarity;
 	  
 	  public User(String firstName, String lastName,int age,String gender, String occupation)
 	  {
@@ -45,11 +48,13 @@ public class User extends Model{
 	    email = firstName+occupation +"@mail.ru";
 	    password = "secret";
 	    ratings = new ArrayList<Rating>();
+	    differentRatings = new ArrayList<Rating>();
 	    
 	  }
 	  
 	  public User() {
 		  ratings = new ArrayList<Rating>();
+		  differentRatings = new ArrayList<Rating>();
 	  }
 	  
 	  
@@ -153,6 +158,24 @@ public class User extends Model{
 	  
 	  public void setRatings(List<Rating> rating) {
 		  ratings = rating;
+	  }
+	  public void addRating(Rating rating) {
+		  ratings.add(rating);
+	  }
+	  
+	  public void setDifferentRatings(List<Rating> rating) {
+		  differentRatings = rating;
+	  }
+	  public List<Rating> getDifferentRatings() {
+		  return differentRatings;
+	  }
+	  
+	  
+	  public void setSimilarity(double similarity) {
+		  this.similarity = similarity;
+	  }
+	  public double getSimilarity() {
+		  return similarity;
 	  }
 	  
 	  

@@ -32,18 +32,15 @@ public class XMLSerializer implements Serializer{
 	
 	public void read() throws Exception {
 		ObjectInputStream is = null;
-		 try
-		 {
-		 XStream xstream = new XStream(new DomDriver());
-		 is = xstream.createObjectInputStream(new FileReader(file));
-		 stack = (Stack) is.readObject();
+		 try {
+			 XStream xstream = new XStream(new DomDriver());
+			 is = xstream.createObjectInputStream(new FileReader(file));
+			 stack = (Stack) is.readObject();
 		 }
-		 finally
-		 {
-		 if (is != null)
-		 {
-		 is.close();
-		 }
+		 finally {
+			 if (is != null) {
+				 is.close();
+			 }
 		 }
 	}
 	
