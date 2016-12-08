@@ -36,7 +36,7 @@ public class Data {
 	}
 	
 	public static void loadUsers() throws Exception {
-	      InputStream usersFile = new FileInputStream("./bigMovieData/users.dat");
+	      InputStream usersFile = new FileInputStream("./moviedata/users5.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inUsers = new BufferedReader(new InputStreamReader(usersFile));
 	      
@@ -68,7 +68,7 @@ public class Data {
 	}
 	
 	public static void loadGenres() throws Exception {
-	      InputStream genreFile = new FileInputStream("./bigMovieData/genre.dat");
+	      InputStream genreFile = new FileInputStream("./moviedata/genre.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inGenres = new BufferedReader(new InputStreamReader(genreFile));
 	      
@@ -95,7 +95,7 @@ public class Data {
 	}
 	
 	public static void loadMovies() throws Exception {
-	      InputStream movieFile = new FileInputStream("./bigMovieData/items.dat");
+	      InputStream movieFile = new FileInputStream("./moviedata/items5.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inMovies = new BufferedReader(new InputStreamReader(movieFile));
 	      
@@ -139,7 +139,7 @@ public class Data {
 	
 	
 	public static void addRatings() throws Exception {
-		InputStream ratingsFile = new FileInputStream("./bigMovieData/ratings.dat");
+		InputStream ratingsFile = new FileInputStream("./moviedata/ratings5.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inGenres = new BufferedReader(new InputStreamReader(ratingsFile));
 	      
@@ -160,41 +160,47 @@ public class Data {
 		               int user= Integer.parseInt(ratingTokens[0]);
 		               int movie = Integer.parseInt(ratingTokens[1]);
 		               int rating = Integer.parseInt(ratingTokens[2]);
+		               Long timestamp = Long.parseLong(ratingTokens[3]);
 		               
-		               Rating newRating = new Rating(user, movie, rating);
-//		               removeDuplicateRatings(user, movie, rating, r.allRatings);
-//		               r.allRatings.add(newRating);
+		               Rating newRating = new Rating(user, movie, rating, timestamp);
 		               
-		               removeDuplicateRatings(user, movie, rating, r.users.get(user).getRatings());
-		               r.users.get(user).addRating(newRating);
-		               
-		               removeDuplicateRatings(user, movie, rating, r.movies.get(movie).getRatings());
-		               r.movies.get(movie).addRating(newRating);
-		               
-		            }else
-		            {
+		               boolean lower = removeDuplicates(user, movie, rating, timestamp, r.users.get(user).getRatings());
+		               if(!lower) {
+		            	   r.users.get(user).addRating(newRating);
+		            	   r.movies.get(movie).addRating(newRating);
+		               }
+		            }else {
 		                throw new Exception("Invalid rating info length: "+ratingTokens.length);
 		            }
 		        }
 	        } else {
 	        	throw new Exception("User list is empty");
 	        }
+	        
+	        
 	}
 	
-	public static List<Rating> removeDuplicateRatings(int user, int movie, int rating, List<Rating> ratings) {
-		 List<Rating> dupRatings = new ArrayList<Rating>();
+	public static boolean removeDuplicates(int user, int movie, int rating, Long timestamp, List<Rating> ratings) {
+		boolean lower = false;
+		List<Rating> dupRatings = new ArrayList<Rating>();
 		 if(r.users.containsKey(user) && r.movies.containsKey(movie)) {
       	   for(Rating thisRating : ratings) {
       		   if(thisRating.getObject1() == user && thisRating.getObject2() == movie) {
-      			   dupRatings.add(thisRating);
+      			   if( thisRating.getTimestamp() < timestamp) {
+      				   dupRatings.add(thisRating);
+      			   } else {
+      				   lower = true;
+      				   return lower;
+      			   }
       		   }
       	   }
          }
 		 for(Rating thisRating : dupRatings) {
 	        	ratings.remove(thisRating);
 	        }
-		 return ratings;
+		 return lower;
 	}
+	
 	
 	
 

@@ -23,6 +23,7 @@ public class Movie extends Model {
 	private String genre;
 	
 	public List<Rating> ratings;
+	public double overallRating = 0;
 	
 	public Movie() {
 		ratings = new ArrayList<Rating>();
@@ -91,5 +92,11 @@ public class Movie extends Model {
 	 }
 	public void addRating(Rating rating) {
 		ratings.add(rating);
+	}
+	public void setOverallRating(double total) {
+		this.overallRating = total;
+	}
+	public double getOverallRating() {
+		return overallRating;
 	}
 }

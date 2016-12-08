@@ -7,17 +7,21 @@ import Driver.Data;
 
 import play.db.jpa.Model;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
 public class Rating extends Model{
 
 	private int object1; 
 	private int object2; 
 	private int rating;
+	private Long timestamp;
 	
-	public Rating(int object1, int object2,int  rating) {
+	public Rating(int object1, int object2,int  rating, Long timestamp) {
 		this.object1 = object1;
 		this.object2 = object2;
 		this.rating = rating;
+		this.timestamp = timestamp;
 	}
 	
 	public Rating() {
@@ -57,6 +61,12 @@ public class Rating extends Model{
 	}
 	public void setRating(int rating) {
 		this.rating = rating;
+	}
+	public void setTimestamo(Long timestamp) {
+		this.timestamp = timestamp;
+	}
+	public Long getTimestamp() {
+		return timestamp;
 	}
 	  
 }
