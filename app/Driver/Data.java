@@ -23,7 +23,6 @@ import models.User;
 import play.db.jpa.Model;
 
 @Entity
-@Table(name="`Data`")
 public class Data {
 	
 	static RecommenderAPI r = new RecommenderAPI();

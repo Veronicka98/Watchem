@@ -16,7 +16,6 @@ import models.Rating;
 import play.db.jpa.Model;
 
 @Entity
-@Table(name="`Movie`")
 public class Movie extends Model {
 	
 	private int movieID;

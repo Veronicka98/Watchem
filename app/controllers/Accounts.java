@@ -11,6 +11,8 @@ public class Accounts extends Controller {
 	
 	static RecommenderAPI rec = new RecommenderAPI();
 	
+	
+	
 	public static RecommenderAPI getRecommender() {
 		return rec;
 	}
@@ -64,12 +66,6 @@ public class Accounts extends Controller {
 		}
 		session.clear();
 		rec.load();
-		
-		for(User user : rec.users.values()) {
-			Logger.info(user.getEmail() + " " + user.getPassword());
-		}
-		
-		Logger.info(session.get("logged_in_userid"));
 		
 		if (session.contains("logged_in_userid") && session.get("logged_in_userid") != null)
 	    {
