@@ -22,7 +22,7 @@ import models.Rating;
 import models.User;
 import play.db.jpa.Model;
 
-@Entity
+
 public class Data {
 	
 	static RecommenderAPI r = new RecommenderAPI();

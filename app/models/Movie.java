@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.google.common.base.Objects;
@@ -26,6 +27,7 @@ public class Movie extends Model {
 	private String url;
 	private String genre;
 	
+	@OneToMany()
 	public List<Rating> ratings;
 	public double overallRating = 0;
 	
