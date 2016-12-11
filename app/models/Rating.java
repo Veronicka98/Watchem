@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import org.apache.commons.lang.ArrayUtils;
 
 @Entity
+@Table(name="`Rating`")
 public class Rating extends Model{
 
 	private int object1; 

@@ -6,12 +6,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import com.google.common.base.Objects;
 
 import Driver.Data;
 import models.Rating;
 import play.db.jpa.Model;
 
+@Entity
+@Table(name="`Movie`")
 public class Movie extends Model {
 	
 	private int movieID;

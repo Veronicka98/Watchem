@@ -14,11 +14,16 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import models.Movie;
 import models.Rating;
 import models.User;
 import play.db.jpa.Model;
 
+@Entity
+@Table(name="`Data`")
 public class Data {
 	
 	static RecommenderAPI r = new RecommenderAPI();
