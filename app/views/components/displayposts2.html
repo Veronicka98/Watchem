@@ -1,0 +1,51 @@
+<div class="ui header">Published Posts</div>
+  #{list items:user.posts.reverse(), as:'post'}
+    <div class="ui fluid card">
+	  <div class="content">
+	    <div class="header">${post.title}</div>
+	    <div class="description">
+	      
+	      ${post.content}
+	      
+	      <div class="ui divider"></div>
+	      
+	      <div class="ui center aligned top aligned padded grid">
+		    <div class="ten wide column">
+		      <div class="ui small header">Comments</div>
+		      <div class="ui center aligned middle aligned padded grid">
+	           #{list items:post.comments, as:'comment'}
+	              <div class="row">
+	              <div class="three wide column">
+	                ${comment.from.firstName}:
+	              </div>
+	              <div class="seven wide column">
+	                
+	                ${comment.commentText}
+	              
+	              </div>
+	              <div class="six wide column">
+	                
+	                ${comment.date}
+	              
+	              </div>
+	              </div>
+	          #{/list}
+	          </div>
+	          </div>
+	        <div class="six wide column">
+	          
+	        <div class="ui small header">Leave a comment</div>
+		      <form action="/blog/sendcomment2/${user.id}/${post.id}" method="POST">
+			    <div class="field">   
+			      <textarea name="commentText" placeholder="Comment"></textarea>
+			    </div>
+			    <button  class="ui button">Send</button>
+			  </form>
+			</div>
+			
+          </div>
+          
+	    </div>
+	  </div>
+	</div>
+  #{/list}

@@ -1,2 +1,67 @@
 #{extends 'main.html' /}
 #{set title:'Signup for Spacebook' /}
+
+<div class="background">
+
+     <div class="ui segment" style="background-color:white;">
+		<nav class="ui secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home"> 
+			  watchem
+			</a>
+		  </div>
+		  <div class="right menu">
+		  <div class="ui simple dropdown item" style="color:#8C8C8C;">
+			</div>
+  		    <a class="item border" href="/signup"> Signup  </a>
+  			<a class="item" href="/login">  Login   </a>
+  	   	  </div>
+		</nav> 
+	  </div>
+
+<section class="ui form">
+  <form action="/register" method="POST">
+   <div class="ui center aligned middle aligned grid">
+   <div class="sixteen wide column">
+   
+     <div class="row">
+	    <div class="header log">Sign up here:</div>
+	 </div>
+	 
+   </div>
+   
+   <div class="six wide column">
+	 <div class="row">
+    <div class="two fields">
+      <div class="field">
+        <input placeholder="First Name" style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" type="text" name="firstName">
+      </div>
+      <div class="field">
+        <input placeholder="Last Name" style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" type="text" name="lastName">
+      </div>
+    </div> 
+    <div class="three fields">
+      <div class="field">
+        <input placeholder="Age"  style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" type="number" name="age">
+      </div>
+      <div class="field">
+        <input placeholder="Gender" style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" type="text" name="gender">
+      </div>
+      <div class="field">
+        <input placeholder="Occupation"  style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" type="text" name="occupation">
+      </div>
+    </div> 
+    <div class="field">
+      <input placeholder="Email"  style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" type="text" name="email">
+    </div>
+    <div class="field">
+      <input placeholder="Password"  style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" type="password" name="password">
+    </div>
+    <button class="ui black submit button" style="font-family: 'Press Start 2P', cursive;font-size:10px;">Signup</button>
+    </div>
+    </div>
+   </div>
+  </form>
+</section> 
+
+</div>

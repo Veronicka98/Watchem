@@ -1,0 +1,56 @@
+#{extends 'main.html' /}
+#{set title:'Edit Details' /}
+
+	<div class="ui segment" style="background-color:white;">
+		<nav class="ui secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  watchem : ${user.getFirstName()} 
+			</a>
+		  </div>
+		  <div class="right menu">
+  		    <a class="ui item" href="/home">Home</a>      
+  			<a class="ui item" href="/members">Members</a>   
+ 			<a class="ui item" href="/profile">My Profile</a>  
+  			<a class="ui item active border" href="/editprofile">Account Settings</a>  
+  			<a class="ui item" href="/logout">Logout</a> 
+  	   	  </div>
+		</nav> 
+	  </div>
+
+<section class="ui form" style="background-color: black;height: 100%;padding-top:20px;">
+  <div class="ui center aligned top aligned padded stackable grid">
+  <div class="ten wide column">
+  
+	  <form action="/editprofile/change" method="POST">
+	    <div class="two fields">
+	      <div class="field">
+	        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" placeholder="First Name" type="text" name="firstName" value="${user.getFirstName()}">
+	      </div>
+	      <div class="field">
+	        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" placeholder="Last Name" type="text" name="lastName" value="${user.getLastName()}">
+	      </div>
+	    </div>    
+	    <div class="three fields">
+	      <div class="field">
+	        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" placeholder="Gender" type="text" name="gender" value="${user.getGender()}">
+	      </div>
+	      <div class="field">
+	        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" placeholder="Age" type="text" name="age"value="${user.getAge()}">
+	      </div>
+	      <div class="field">
+	        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" placeholder="Occupation" type="text" name="occupation" value="${user.getOccupation()}">
+	      </div>
+	    </div>    
+	    <div class="field">
+	      <input  style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" placeholder="Email" type="text" name="email" value="${user.getEmail()}">
+	    </div>
+	    <div class="field">
+	      <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" type="password" name="password" value="${user.getPassword()}">
+	    </div>
+	    <button style="font-family: 'Press Start 2P', cursive;" class="ui black submit button">Submit</button>
+	  </form>
+	  </div>
+    </div>
+
+</section>

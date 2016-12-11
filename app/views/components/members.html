@@ -1,0 +1,34 @@
+
+    <div class="ui center aligned middle aligned padded grid">
+      <div class="row top">
+        <div class="three wide column">
+          on/off
+        </div>
+        <div class="four wide column">
+          name
+        </div>
+        <div class="four wide column">
+          similarity
+        </div>
+      </div>
+    #{list items:users, as:'user'}
+        <div class="row">
+        <div class="three wide column">
+          #{if user.logged_in == true}
+          	<i class="green circle icon"></i>
+          #{/if}
+          #{else}
+    		<i class="red circle icon"></i>
+		  #{/else}
+        </div>
+        <div class="four wide column">
+	        <div> ${user.getFirstName()} ${user.getLastName()} </div>
+        </div>
+        <div class="four wide column">
+	        <div> ${user.getSimilarity()}</div>
+        </div>
+        </div>
+        
+    #{/list} 
+  
+  </div>

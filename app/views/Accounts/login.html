@@ -1,2 +1,54 @@
 #{extends 'main.html' /}
 #{set title:'Login to Spacebook' /}
+
+<div class="background">
+
+      <div class="ui segment" style="background-color:white;">
+		<nav class="ui secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home"> 
+			  watchem
+			</a>
+		  </div>
+		  <div class="right menu">
+		  <div class="ui simple dropdown item" style="color:#8C8C8C;">
+			</div>
+  		    <a class="item" href="/signup"> Signup  </a>
+  			<a class="item border" href="/login">  Login   </a>
+  	   	  </div>
+		</nav> 
+	  </div>
+
+
+	
+	  
+	    <section class="ui form" >
+		  <form action="/authenticate" method="POST">
+		    <div class="ui center aligned middle aligned grid">
+		      <div class="sixteen wide column">
+		        <div class="row">
+		          <div class="header log">Log in here:</div>
+		        </div>
+		      </div>
+		      <div class="three wide column">
+		        <div class="row">
+		          <div class="field">
+		            <input type="text" style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" name="email" placeholder="Username">
+		          </div>
+		          <div class="field">
+      		        <input type="password" style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" name="password" placeholder="Password">
+   		          </div>
+		        </div>
+		      
+		        <div class="row button">
+		          <button class="ui black submit button" style="font-family: 'Press Start 2P', cursive;font-size:10px;">Login</button>
+		        </div>
+		      </div>
+		    </div>
+   		  </div>
+         </form>
+         
+         
+       </section>
+
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+          <div class="ui fluid card">
+ 			 <div class="ui fluid image">
+  			  <img src="/profile/getpicture/${user.id}"/>
+  			</div>
+  			<div class="content">
+   			 <div class="description">
+   			      My email: ${user.email}</br>
+    			  Nationality: ${user.nationality}</br>
+    			  Age: ${user.age}
+  			  </div>
+ 			 </div>
+ 			 <div class="extra content">
+			    <a>
+ 			     <i class="user icon"></i>
+  			     ${user.friendships.size()} Friends
+  			    </a>
+  			 </div>
+  		   </div>
+  	     
+			<div class="ui fluid card">
+			  <div class="content">
+   				 <div class="header">Change Profile Picture</div>
+       			   <form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">    
+         			 <input type="file" name="picture" /> 
+          			 <input type="submit" name="submit" value="Upload" />
+          		   </form>
+ 			  </div>
+		    </div>
+			
+          </div>

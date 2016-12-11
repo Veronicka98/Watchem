@@ -68,7 +68,7 @@ public class Movie extends Model {
 	public String getURL() {
 		return url;
 	}
-	public void setLink(String url) {
+	public void setURL(String url) {
 		this.url = url;
 	}
 	

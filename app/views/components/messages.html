@@ -1,0 +1,46 @@
+
+<div class="ui header">My messages (${user.inbox.size()})</div>
+         <div class="ui center aligned middle aligned padded grid">
+           <div class="row top">
+           <div class="one wide column">
+              ON/OFF
+            </div>
+            <div class="seven wide column">
+              FROM
+            </div>
+            <div class="eight wide column">
+              MESSAGE
+            </div>
+           </div>
+           #{if user.inbox.size() > 0}
+          #{list items:user.inbox, as:'message'}
+           <div class="row">
+           <div class="one wide column">
+              #{if message.from.logged_in == true}
+              	<i class="green circle icon"></i>
+              #{/if}
+              #{else}
+    			<i class="red circle icon"></i>
+			  #{/else}
+            </div>
+            <div class="seven wide column">
+	            <div class="ui simple dropdown item">
+				    <i class="fa fa-users"></i> <a href="/publicprofile/${message.from.id}">${message.from.firstName}</a> <i class="fa fa-caret-down"></i>
+				    <div class="menu">
+				        <div class="item">
+				        <div class="ui card">
+						  <div class="image">
+						    <img class="ui image" src="/profile/getpicture/${message.from.id}">
+						  </div>
+					     </div>
+					    </div>
+				    </div>
+				</div>
+            </div>
+            <div class="eight wide column">
+                ${message.messageText}
+            </div>
+           </div>
+          #{/list}
+          #{/if} 
+        </div>

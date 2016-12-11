@@ -1,4 +1,29 @@
 #{extends 'main.html' /}
 #{set title:'Welcome to Spacebook' /}
 
-<p>Hello!</p>
+
+    <div class="ui background container">
+
+	  <div class="ui segment" style="background-color:white;">
+		<nav class="ui secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home"> 
+			  Welcome to watchem.
+			</a>
+		  </div>
+		  <div class="right menu">
+		  <div class="ui simple dropdown item" style="color:#8C8C8C;">
+			</div>
+  		    <a class="item" href="/signup"> Signup  </a>
+  			<a class="item" href="/login">  Login   </a>
+  	   	  </div>
+		</nav> 
+	  </div>
+	  		
+    
+        #{include "components/footer.html" /}
+        
+        <div style="text-align: center;font-size:10px;position: fixed;bottom: 0;width: 100%;">Initial data collected by MovieLens from September 19th, 
+1997 through April 22nd, 1998.</div>
+		
+	</div>

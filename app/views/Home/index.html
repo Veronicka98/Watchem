@@ -1,4 +1,127 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-   
+
+      <div class="ui segment" style="background-color:white;">
+		<nav class="ui secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  watchem : ${user.getFirstName()} 
+			</a>
+		  </div>
+		  <div class="right menu">
+  		    <a class="ui item active border" href="/home">Home</a>      
+  			<a class="ui item" href="/members">Members</a>   
+ 			<a class="ui item" href="/profile">My Profile</a> 
+  			<a class="ui item" href="/logout">Logout</a> 
+  	   	  </div>
+		</nav> 
+	  </div>
+
+
+	<div class="topten">
+		 <div class="ui center aligned top aligned stackable grid">
+    		<div class="sixteen wide column">
+    			<div class="row tt">
+    				<p>Top Ten Movies on watchem</p>
+    			</div>
+				<div class="row">
+				#{list items:movies, as:'movie'}
+				<div class="movie">		
+					<div class="ui card movies">
+					  <div class="image">
+					    <img src="/../public/images/1.1.jpg">
+					  </div>
+					  <div class="content" style="background-color: black;">
+					    <p style="color: white;" >
+					     <a style="color: white;" href="/movie/${movie.getMovieID()}">
+					      ${movie.getTitle()}
+					     </a>
+					    </p>
+					    
+					  </div>
+					  
+					</div>
+				</div>
+		        #{/list}
+		        </div>
+		        
+		   	    </div>
+			</div>
+		</div>
+		
+		
+		<div class="recommendations">
+		 <div class="ui center aligned top aligned stackable grid">
+    		<div class="sixteen wide column">
+    			<div class="row tt">
+    				<p>Recommendations</p>
+    			</div>
+				<div class="row">
+				#{list recs, as:'movie'}
+				<div class="movie">		
+					<div class="ui card movies">
+					  <div class="image">
+					    <img src="/../public/images/1.1.jpg">
+					  </div>
+					  <div class="content" style="background-color: black;">
+					    <a style="color: white;" href="/movie/${movie.getMovieID()}">
+					      ${movie.getTitle()}
+					     </a>
+					  </div>
+					  
+					</div>
+				</div>
+		        #{/list}
+		        </div>
+		        
+		   	    </div>
+			</div>
+		</div>
+		
+		<div class="myratings">
+			 <div class="ui center aligned top aligned stackable grid">
+			 <div class="sixteen wide column">
+				<div class="row tt">
+    				<p>My Ratings</p>
+    			</div>
+    			</div>
+      			<div class="row">
+			        <div class="eight wide column">
+			          title
+			        </div>
+			        <div class="six wide column">
+			         rating
+			        </div>
+			        
+		        </div>
+		    #{list items:ratings, as:'rating'}
+		        <div class="row">
+		        <div class="eight wide column">
+		         	<a style="color: white;" href="/movie/${allmovies.get(rating.getObject2()).getMovieID()}">
+				      ${allmovies.get(rating.getObject2()).getTitle()}
+				     </a>
+		        </div>
+		        <div class="six wide column">
+			        <div>${rating.getRating()}</div>
+		        </div>
+		        </div>
+		        
+		    #{/list} 
+		  
+		  </div>
+  
+  
+	
+	
+	
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		        

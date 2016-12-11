@@ -1,0 +1,4 @@
+09 Dec 2016 21:55:28,561 INFO  ~ Starting E:\recommender-system\recommender-system-20070875\.
+09 Dec 2016 21:55:29,676 WARN  ~ You're running Play! in DEV mode
+09 Dec 2016 21:55:32,827 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0 for default
+09 Dec 2016 21:55:34,373 INFO  ~ Application 'spacebook-app-2015' is now started !

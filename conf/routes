@@ -23,6 +23,15 @@ GET     /members/follow/{id}                    Members.follow
 
 # Profile page
 GET     /profile                                Profile.index
+POST    /profile/changestatus                   Profile.changeStatus
+POST	/deleterating/{timestamp}		        Profile.deleteRating
+POST	/deleteuser/{id}						Profile.deleteUser
+POST    /deletemovie/{id}						Profile.deleteMovie
+POST    /profile/rate/{id}						MoviePage.addRating
+
+#Move page
+GET		/movie/{id}								MoviePage.index
+POST	/addmovie								MoviePage.addMovie
 
 # Edit Details page
 GET     /editprofile                            EditProfile.index

@@ -1,0 +1,20 @@
+
+        <div class="ui header">Update Status</div>
+
+        <div class="top row" style="padding-bottom: 0px; padding-top: 0px; border: solid grey 1px;">
+          <div class="ui field segment">
+            <p> ${user.statusText} </p>
+          </div>
+        </div>
+
+			
+        <section class="ui form segment" style="border: solid grey 1px;">
+          <form action="/profile/changestatus" method="post">
+            <div class="field">
+              <textarea name="statusText" placeholder="Enter/Change Status"></textarea>
+            </div>
+            <input class="ui blue button" type="submit" name="submit" value="Update" />
+          </form>
+         </section>
+
+     

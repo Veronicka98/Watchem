@@ -1,0 +1,23 @@
+<div class="row">
+          <div class="ui header">${user.firstName} ${user.lastName} 
+            <a href="/members/follow/${user.id}"><i class="plus square outline icon"></i></a>
+          </div>
+        </div>
+        <div class="row">
+			<div class="ui fluid card">
+ 			 <div class="ui fluid image">
+  			  <img src="/profile/getpicture/${user.id}"/>
+  			</div>
+  			<div class="content">
+   			 <div class="description">
+    			  Nationality: ${user.nationality}
+  			  </div>
+ 			 </div>
+ 			 <div class="extra content">
+			    <a>
+ 			     <i class="user icon"></i>
+  			    ${user.friendships.size()} Friends
+  			  </a>
+  			</div>
+		  </div>
+		</div>

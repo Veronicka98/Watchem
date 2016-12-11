@@ -1,42 +1,184 @@
 #{extends 'main.html' /}
 #{set title:'Profile' /}
 
-         <div class="ui segment" style="background-color:black;">
-		<nav class="ui inverted secondary main menu">
+      <div class="ui segment" style="background-color:white;">
+		<nav class="ui secondary main menu">
 		  <div class="left menu">
 			<a class="item" href="/home">
-			  <i class="white circle notched icon"></i> 
-			  Spacebook : ${user.firstName} ${user.lastName}
+			  watchem
 			</a>
 		  </div>
 		  <div class="right menu">
   		    <a class="ui item" href="/home">Home</a>      
   			<a class="ui item" href="/members">Members</a>   
- 			<a class="ui item active border" href="/profile">My Profile</a>   
-  			<a class="ui item" href="/blog">Blog</a>
+ 			<a class="ui item active border" href="/profile">My Profile</a> 
   			<a class="ui item" href="/editprofile">Account Settings</a> 
   			<a class="ui item" href="/logout">Logout</a> 
   	   	  </div>
 		</nav> 
 	  </div> 
 
-  <div class="ui center aligned top aligned padded stackable grid">
-    
-      <div class="six wide column">
-        <div class="row">
-         <div class="ui header">${user.firstName} ${user.lastName}</div>
-        </div>
-      #{include "components/profileimages.html" /} 
-      </div>
-      
-      <div class="six wide column">
-    <div class="row">
-      #{include "components/statusupdate.html" /}   
-    </div>
-    </div>
-    
-   
-    
-  </div>
-  
+
+		<div class="profiledetails" style="background-color: black;">
+			  <div class="image" style="width:50%;background-color:black;display:inline;float:left;">
+			  	<img class="profile" src="/../public/images/topten/8.jpg">
+			  </div>
+			  
+			  <div class="details" style="margin-left: 20px;width:48%;height:100%;background-color:black;display:inline;float:left;padding: 15px;">
+			  	<p>${user.getFirstName()} ${user.getLastName()}</p>
+			  	<p>${user.getGender()} ${user.getAge()}</p>
+			  	<p>${user.getOccupation()}</p>
+			  	<p>Favourite Movie: ${user.getStatusText()}</p>
+			  	
+
+			
+		        <section class="ui form">
+		          <form action="/profile/changestatus" method="post">
+		            <div class="field">
+		              <textarea name="statusText" placeholder="Enter/Change favourite movie"></textarea>
+		            </div>
+		            <input style="font-family: 'Press Start 2P', cursive;" class="ui black button" type="submit" name="submit" value="Update" />
+		          </form>
+		         </section>
+		         
+		         <form action="/deleteuser/${user.getUserID()}" method="post" style="margin-top: 5px;">
+		            <input style="font-family: 'Press Start 2P', cursive;" class="ui black button" type="submit" name="submit" value="Delete Profile" />
+		         </form>
+         
+			  </div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div style="background-color: black;width:97%;margin: 0 auto;float: left;margin-left: 1.5%;margin-top: 15px;padding-bottom:15px;">
+		  
+		  <div class="ui center aligned top aligned stackable grid">
+			 <div class="sixteen wide column">
+				<div class="row tt">
+    				<p>Add a movie</p>
+    			</div>
+    		 </div>
+    		<div class="row">
+		    <div class="twelve wide column">
+		  	<section class="ui form">
+			  <form action="/addmovie" method="POST">
+			  
+			    <div class="three fields">
+			      <div class="field">
+			        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" name="title" placeholder="Title" type="text">
+			      </div>
+			      <div class="field">
+			        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" name="year" placeholder="Year" type="number">
+			      </div>
+			      <div class="field">
+			        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" placeholder="Genre" type="text" name="genre">
+			      </div>
+			    </div>  
+			      <div class="field">
+			        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;"  name="videoReleaseDate" placeholder="Video Release Date dd-mmm-yyyy" type="text">
+			      </div>
+			      <div class="field">
+			        <input style="text-align: center;font-family: 'Press Start 2P', cursive;font-size:10px;" placeholder="url" type="text" name="url">
+			      </div>  
+			    <button class="ui black submit button" style="font-family: 'Press Start 2P', cursive;">Add</button>
+			  </form>
+			  </section>
+			  </div>
+		</div>
+    	  </div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div style="width:97%">
+		
+		<div class="myratingsprofile">
+		   <div class="ui center aligned top aligned stackable grid">
+			 <div class="sixteen wide column">
+				<div class="row tt">
+    				<p>My Ratings</p>
+    			</div>
+    		 </div>
+      			<div class="row">
+			        <div class="six wide column">
+			          title
+			        </div>
+			        <div class="three wide column">
+			         rating
+			        </div>
+			        <div class="three wide column">
+			         delete
+			        </div>
+			        
+		        </div>
+		    #{list items:ratings, as:'rating'}
+		        <div class="row">
+		        <div class="six wide column">
+		         	<a style="color: white;" href="/movie/${allmovies.get(rating.getObject2()).getMovieID()}">
+				      ${allmovies.get(rating.getObject2()).getTitle()}
+				     </a>
+		        </div>
+		        <div class="three wide column">
+			        <div>${rating.getRating()}</div>
+		        </div>
+		        <div class="three wide column">
+		         <form action="/deleterating/${rating.getTimestamp()}" method="POST">
+		            <input style="font-family: 'Press Start 2P', cursive;" class="ui black button" type="submit" name="submit" value="Delete" />
+		          </form>
+		        </div>
+		      </div>
+		        
+		    #{/list}
+		    </div> 
+		  
+		  </div>
+		  
+		  
+	
+		  <div class="allmovies">
+			 <div class="ui center aligned top aligned stackable grid">
+			 <div class="sixteen wide column">
+				<div class="row tt">
+    				<p>All Movies</p>
+    			</div>
+    			</div>
+      			<div class="row">
+			        <div class="six wide column">
+			          title
+			        </div>
+			        <div class="three wide column">
+			         delete
+			        </div>
+			        
+		        </div>
+		    #{list allmovies.values(), as:'movie'}
+		        <div class="row">
+		        <div class="six wide column">
+		         	<a style="color: white;" href="/movie/${movie.getMovieID()}">
+				      ${movie.getTitle()}
+				     </a>
+		        </div>
+		        <div class="three wide column">
+		         <form action="/deletemovie/${movie.getMovieID()}" method="POST">
+		            <input style="font-family: 'Press Start 2P', cursive;" class="ui black button" type="submit" name="submit" value="Delete" />
+		          </form>
+		        </div>
+		        </div>
+		        
+		    #{/list} 
+		  
+		  </div>
+		  </div>
+		  
+		  </div>
+		  
+		  
  

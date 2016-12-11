@@ -1,0 +1,36 @@
+<div class="ui header">My friends (${user.friendships.size()})</div>
+          <div class="ui center aligned middle aligned padded grid">
+           <div class="row top">
+            <div class="seven wide column">
+              NAME
+            </div>
+            <div class="five wide column">
+              DROP
+            </div>
+           </div>
+          #{list items:user.friendships, as:'friendship'}
+          <!--<div class="row">
+            <div class="seven wide column">
+             <div class="ui simple dropdown item">
+				    <i class="fa fa-users"></i> 
+				      <a href="/publicprofile/${friendship.targetUser.getUserID()}"> ${friendship.targetUser.getFirstName()} ${friendship.targetUser.lastName}</a>
+				    <i class="fa fa-caret-down"></i>
+				    <div class="menu">
+				        <div class="item">
+				        <div class="ui card">
+						  <div class="image">
+						    <img class="ui image" src="/profile/getpicture/${friendship.targetUser.getUserID()}">
+						  </div>
+					     </div>
+					    </div>
+				    </div>
+				</div>
+            </div>
+            <div class="five wide column">
+              <a href="/home/drop/${friendship.targetUser.getUserID()}"><i class="minus square outline icon"></i></a>
+            </div>
+           </div>-->
+          #{/list}
+        </div>
+        
+                

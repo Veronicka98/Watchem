@@ -1,0 +1,18 @@
+		<div class="row">
+		
+          <div class="ui fluid card">
+ 			 <div class="ui fluid image">
+  			  <img src="/profile/getpicture/${user.id}"/>
+  			</div>
+  			<div class="content">
+   			 <div class="content">
+   				 <div class="ui header">Change Profile Picture</div>
+       			   <form action="/profile/uploadpictureHome/${user.id}" method="post" enctype="multipart/form-data" >    
+         			 <input type="file" name="picture" /> 
+          			 <input type="submit" name="submit" value="Upload" style="float:left;" />
+          		   </form>
+ 			  </div>
+ 			 </div>
+  		   </div>
+  	     
+          </div>

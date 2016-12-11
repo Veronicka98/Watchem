@@ -36,7 +36,7 @@ public class Data {
 	}
 	
 	public static void loadUsers() throws Exception {
-	      InputStream usersFile = new FileInputStream("./moviedata/users5.dat");
+	      InputStream usersFile = new FileInputStream("./bigMovieData/users.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inUsers = new BufferedReader(new InputStreamReader(usersFile));
 	      
@@ -58,7 +58,7 @@ public class Data {
 	                User user = new User(userTokens[1], userTokens[2], Integer.parseInt(userTokens[3]), userTokens[4], userTokens[5]);
 	                user.setUserID(Integer.parseInt(userTokens[0]));
 	                r.users.put(Integer.parseInt(userTokens[0]),user);
-	               // r.emailIndex.put(user.getEmail(), user);
+	                r.emailIndex.put(user.getEmail(), user);
 	                
 	            }else
 	            {
@@ -68,7 +68,7 @@ public class Data {
 	}
 	
 	public static void loadGenres() throws Exception {
-	      InputStream genreFile = new FileInputStream("./moviedata/genre.dat");
+	      InputStream genreFile = new FileInputStream("./bigMovieData/genre.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inGenres = new BufferedReader(new InputStreamReader(genreFile));
 	      
@@ -95,7 +95,7 @@ public class Data {
 	}
 	
 	public static void loadMovies() throws Exception {
-	      InputStream movieFile = new FileInputStream("./moviedata/items5.dat");
+	      InputStream movieFile = new FileInputStream("./bigMovieData/items.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inMovies = new BufferedReader(new InputStreamReader(movieFile));
 	      
@@ -139,7 +139,7 @@ public class Data {
 	
 	
 	public static void addRatings() throws Exception {
-		InputStream ratingsFile = new FileInputStream("./moviedata/ratings5.dat");
+		InputStream ratingsFile = new FileInputStream("./bigMovieData/ratings.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inGenres = new BufferedReader(new InputStreamReader(ratingsFile));
 	      
@@ -164,8 +164,9 @@ public class Data {
 		               
 		               Rating newRating = new Rating(user, movie, rating, timestamp);
 		               
-		               boolean lower = removeDuplicates(user, movie, rating, timestamp, r.users.get(user).getRatings());
+		               boolean lower = r.removeDuplicates(user, movie, rating, timestamp, r.users.get(user).getRatings());
 		               if(!lower) {
+		            	   System.out.println("Rating added to " + r.users.get(user).getFirstName() + " " + lower);
 		            	   r.users.get(user).addRating(newRating);
 		            	   r.movies.get(movie).addRating(newRating);
 		               }
@@ -180,26 +181,7 @@ public class Data {
 	        
 	}
 	
-	public static boolean removeDuplicates(int user, int movie, int rating, Long timestamp, List<Rating> ratings) {
-		boolean lower = false;
-		List<Rating> dupRatings = new ArrayList<Rating>();
-		 if(r.users.containsKey(user) && r.movies.containsKey(movie)) {
-      	   for(Rating thisRating : ratings) {
-      		   if(thisRating.getObject1() == user && thisRating.getObject2() == movie) {
-      			   if( thisRating.getTimestamp() < timestamp) {
-      				   dupRatings.add(thisRating);
-      			   } else {
-      				   lower = true;
-      				   return lower;
-      			   }
-      		   }
-      	   }
-         }
-		 for(Rating thisRating : dupRatings) {
-	        	ratings.remove(thisRating);
-	        }
-		 return lower;
-	}
+	
 	
 	
 	

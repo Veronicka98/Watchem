@@ -20427,12 +20427,12 @@ ol.ui.horizontal.list li:before,
 
 .ui.cards > .card > :first-child,
 .ui.card > :first-child {
-  border-radius: 0.2857rem 0.2857rem 0em 0em !important;
+  border-radius: 0px;
 }
 
 .ui.cards > .card > :last-child,
 .ui.card > :last-child {
-  border-radius: 0em 0em 0.2857rem 0.2857rem !important;
+  border-radius: 0px;
 }
 
 /*--------------
@@ -20458,7 +20458,7 @@ ol.ui.horizontal.list li:before,
 
 .ui.cards > .card > .image:only-child > img,
 .ui.card > .image:only-child > img {
-  border-radius: 0.2857rem;
+  border-radius: 0em;
 }
 
 /*--------------
@@ -20473,7 +20473,7 @@ ol.ui.horizontal.list li:before,
   flex-grow: 1;
   background: none;
   margin: 0em;
-  padding: 1em 1em;
+  padding: 1em 0em;
   box-shadow: none;
   font-size: 1em;
   border: none;
@@ -31726,14 +31726,14 @@ html.ios {
   border: 1px solid rgba(39, 41, 43, 0.15);
   outline: none;
   color: rgba(0, 0, 0, 0.8);
-  border-radius: 0.2857rem;
+  border-radius: 0em;
   box-shadow: 0em 0em 0em 0em transparent inset;
   -webkit-transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   font-size: 1em;
   height: 12em;
-  min-height: 8em;
-  max-height: 24em;
+  min-height: 5em;
+  max-height: 1em;
   line-height: 1.2857;
   resize: vertical;
 }

@@ -1,0 +1,45 @@
+#{extends 'main.html' /} 
+#{set title:'Members' /} 
+
+      <div class="ui segment" style="background-color:white;">
+		<nav class="ui secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  watchem : ${user.getFirstName()} 
+			</a>
+		  </div>
+		  <div class="right menu">
+  		    <a class="ui item" href="/home">Home</a>      
+  			<a class="ui item" href="/members">Members</a>   
+ 			<a class="ui item" href="/profile">My Profile</a>   
+  			<a class="ui item" href="/logout">Logout</a> 
+  	   	  </div>
+		</nav> 
+	  </div> 
+
+
+	<div class="fullmovie">
+		<div class="mymovie">
+				<p>${movie.getTitle()}</p>
+				<p>Release date: ${movie.getVideoReleaseDate()}</p>
+				<p>Genre: ${movie.getGenre()}</p>
+				<p>Summary: Aliquam cursus enim quis quam finibus, eu scelerisque tortor dignissim. Morbi condimentum lobortis ante a malesuada. Praesent sollicitudin faucibus venenatis. Vivamus vestibulum sem et odio maximus vehicula. Vestibulum eget nulla a massa ultrices interdum sit amet ut nisl.</p>
+				<p><a style="color: white;"href="">${movie.getURL()}</a></p>
+		</div>
+		
+		<div class="mymovie" style="top: 390px;width:30%;">
+			<a style="color:white;" href="" ><p>Watch</p></a>
+		</div>
+		
+		<div class="mymovie" style="top: 475px;width:30%;">
+			<section class="ui form">
+		          <form action="/profile/rate/${movie.getMovieID()}" method="post">
+		            <div class="field">
+		              <textarea name="statusText" placeholder="Enter rating (-5,-3,1,3,5)"></textarea>
+		            </div>
+		            <input style="font-family: 'Press Start 2P', cursive;" class="ui black button" type="submit" name="submit" value="Rate" />
+		          </form>
+		         </section>
+		</div>
+	</div>
+  

@@ -8,6 +8,7 @@ import models.Rating;
 import static com.google.common.base.MoreObjects.toStringHelper;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
@@ -38,11 +39,12 @@ public class User extends Model {
 	  private String password;
 	  
 	  public boolean logged_in;
+	  private String statusText = "";
 	  
 	  @OneToMany()
-	  public List<Rating> ratings = new ArrayList<Rating>();
+	  public List<Rating> ratings;
 	  @OneToMany()
-	  public List<Rating> differentRatings = new ArrayList<Rating>();
+	  public List<Rating> differentRatings;
 	  
 	  private double similarity;
 	  
@@ -53,16 +55,16 @@ public class User extends Model {
 	    this.age = age;
 	    this.gender = gender;
 	    this.occupation = occupation;
-	    email = firstName+occupation +"@mail.ru";
+	    email = firstName+"-"+occupation +"@mail.ru";
 	    password = "secret";
-//	    ratings = new ArrayList<Rating>();
-//	    differentRatings = new ArrayList<Rating>();
+	    ratings = new ArrayList<Rating>();
+	    differentRatings = new ArrayList<Rating>();
 	    
 	  }
 	  
 	  public User() {
-//		  ratings = new ArrayList<Rating>();
-//		  differentRatings = new ArrayList<Rating>();
+		  ratings = new ArrayList<Rating>();
+		  differentRatings = new ArrayList<Rating>();
 	  }
 	  
 	  
@@ -171,6 +173,10 @@ public class User extends Model {
 		  ratings.add(rating);
 	  }
 	  
+	  public void deleteRating(Rating rating) {
+		  ratings.remove(rating);
+	  }
+	  
 	  public void setDifferentRatings(List<Rating> rating) {
 		  differentRatings = rating;
 	  }
@@ -189,10 +195,13 @@ public class User extends Model {
 		  return similarity;
 	  }
 	  
+	  public void setStatusText(String statustext) {
+		  this.statusText = statustext;
+	  }
+	  public String getStatusText() {
+		  return statusText;
+	  }
 	  
-	  
-	  @OneToMany(mappedBy = "sourceUser")
-	  public List<Friendship> friendships = new ArrayList<Friendship>();
-	  
+
 	  
 }
