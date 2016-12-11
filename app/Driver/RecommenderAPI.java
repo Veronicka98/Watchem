@@ -37,66 +37,15 @@ public class RecommenderAPI {
 	public static Map<Integer, Movie> movies = new HashMap<Integer, Movie>();
 	public static Map<Integer, String> genres = new HashMap<Integer, String>();
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 				
 //		data.loadOriginalData();
-//		System.out.println("\n");
-//		displayUserRatings(1);
-//		System.out.println("\n");
-//    	displayUserRatings(2);
-//    	System.out.println("\n");
-//    	displayUserRatings(3);
-//    	System.out.println("\n");
-//    	displayUserRatings(4);
-//    	System.out.println("\n");
-//    	displayUserRatings(5);
-//    	System.out.println("\n");
-//    	displayMovieRatings(2);
-//    	for(User user : emailIndex.values()) {
-//    		System.out.println("User: "+ user.getFirstName() + " Email: " + user.getEmail());
-//    	}
 //		userCounter = users.size()+1;
 //		movieCounter = movies.size()+1;
 //    	store();
 		
 		//.takes about 9 seconds for big data 
 		//load();
-//		List<Movie> topten = getTopTenMovies();
-//		System.out.println("Top 10 movies:");
-//		for(Movie movie : topten) {
-//			System.out.println("Movie: " + movie.getTitle());
-//		}
-//		
-//		displayUserRatings(4);
-//		List<Movie> recommendations = getUserRecommendations(4);
-//		System.out.println("\n"+users.get(4).getFirstName() + "'s Recommendations:");
-//		for(Movie movie : recommendations) {
-//			System.out.println("Movie: " + movie.getTitle());
-//		}
-//		displayUserRatings(5);
-//		List<Movie> recommendations1 = getUserRecommendations(5);
-//		System.out.println("\n"+users.get(5).getFirstName() + "'s Recommendations:");
-//		for(Movie movie : recommendations1) {
-//			System.out.println("Movie: " + movie.getTitle());
-//		}
-//		displayUserRatings(3);
-//		List<Movie> recommendations2 = getUserRecommendations(3);
-//		System.out.println("\n"+users.get(3).getFirstName() + "'s Recommendations:");
-//		for(Movie movie : recommendations2) {
-//			System.out.println("Movie: " + movie.getTitle());
-//		}
-//		displayUserRatings(2);
-//		List<Movie> recommendations3 = getUserRecommendations(2);
-//		System.out.println("\n"+users.get(2).getFirstName() + "'s Recommendations:");
-//		for(Movie movie : recommendations3) {
-//			System.out.println("Movie: " + movie.getTitle());
-//		}
-//		displayUserRatings(1);
-//		List<Movie> recommendations5 = getUserRecommendations(1);
-//		System.out.println("\n"+users.get(1).getFirstName() + "'s Recommendations:");
-//		for(Movie movie : recommendations5) {
-//			System.out.println("Movie: " + movie.getTitle());
-//		}
 		
 	}
 	
@@ -131,94 +80,117 @@ public class RecommenderAPI {
 		return movieCounter;
 	}
 	
-	public static void addUser(String firstName, String lastName,int age,String gender,String occupation) throws Exception{
-	    User user = new User(firstName, lastName, age, gender, occupation);
-	    if(!users.containsKey(userCounter)) {
-	    	user.setUserID(userCounter);
-		    users.put(userCounter, user);
-		    emailIndex.put(user.getEmail(), user);
-		    userCounter++; 
-	    } else {
-	    	throw new Exception("user counter is wrong");
+	public static void addUser(String firstName, String lastName,int age,String gender,String occupation) {
+	    try {
+			User user = new User(firstName, lastName, age, gender, occupation);
+		    if(!users.containsKey(userCounter)) {
+		    	user.setUserID(userCounter);
+			    users.put(userCounter, user);
+			    emailIndex.put(user.getEmail(), user);
+			    userCounter++; 
+		    } 
+	    } catch(Exception e) {
+	    	System.out.println("user counter is wrong");
 	    }
 	}
 	
-	public static User getUser(int userID) throws Exception{
-		if(users.containsKey(userID)) {
-			return users.get(userID);
-		} else {
-			throw new Exception("user id doesnt exist");
+	public static User getUser(int userID){
+		try {
+			if(users.containsKey(userID)) {
+				return users.get(userID);
+			} 
+		} catch(Exception e) {
+			System.out.println("user id doesnt exist");
+		}
+		return null;
+	}
+	
+	public static void removeUser(int userID) {
+		try {
+			if(users.containsKey(userID)) {
+				users.remove(userID);
+			} 
+		} catch (Exception e) {
+			System.out.println("incorrect user id");
 		}
 	}
 	
-	public static void removeUser(int userID) throws Exception {
-		if(users.containsKey(userID)) {
-			users.remove(userID);
-		} else {
-			throw new Exception("incorrect user id");
+	public static void addMovie(String title,int year, String releaseDate, String url, String genre) {
+		try {
+			Movie movie = new Movie(title, year, releaseDate, url, genre);
+			movie.setMovieID(movieCounter);
+			if(!movies.containsKey(movieCounter)) {
+				movies.put(movieCounter, movie);
+				movieCounter++;
+			} 
+		} catch(Exception e) {
+			System.out.println("movie counter is wrong");
 		}
 	}
 	
-	public static void addMovie(String title,int year, String releaseDate, String url, String genre) throws Exception{
-		Movie movie = new Movie(title, year, releaseDate, url, genre);
-		movie.setMovieID(movieCounter);
-		if(!movies.containsKey(movieCounter)) {
-			movies.put(movieCounter, movie);
-			movieCounter++;
-		} else {
-			throw new Exception("movie counter is wrong");
+	public static Movie getMovie(int movieID) {
+		try {
+			if(movies.containsKey(movieID)) {
+				return movies.get(movieID);
+			} 	
+		} catch(Exception e) {
+			System.out.println("movie id doesnt exist");
 		}
+		return null;
 	}
 	
-	public static Movie getMovie(int movieID) throws Exception{
-		if(movies.containsKey(movieID)) {
-			return movies.get(movieID);
-		} else {
-			throw new Exception("movie id doesnt exist");
-		}
-	}
-	
-	public static void removeMovie(int movieID) throws Exception {
-		if(movies.containsKey(movieID)) {
-			movies.remove(movieID);
-		} else {
-			throw new Exception("incorrect movie id");
-		}
-	}
-	
-	public static void addRating(int userID,int movieID,int rating, long timestamp) throws Exception{
-		int[] ratings = {-5,-3,1,3,5};
-		if(users.containsKey(userID) && movies.containsKey(movieID)) {
-			if(ArrayUtils.contains(ratings, rating) && timestamp > 0) {
-				Rating newRating = new Rating(userID, movieID, rating, timestamp);
-				boolean lowerUser = removeDuplicates(userID, movieID, rating, timestamp, users.get(userID).getRatings());
-				boolean lowerMovie = removeDuplicates(userID, movieID, rating, timestamp, movies.get(movieID).getRatings());
-				if(!lowerUser && !lowerMovie) {
-		     	   users.get(userID).addRating(newRating);
-		     	   movies.get(movieID).addRating(newRating);
-		        }
+	public static void removeMovie(int movieID) {
+		try {
+			if(movies.containsKey(movieID)) {
+				movies.remove(movieID);
 			}
+		} catch(Exception e) {
+			System.out.println("incorrect movie id");
 		}
 	}
 	
-	public static void removeRating(User user, Rating rating) throws Exception{
-		if(user.getRatings().contains(rating)) {
-			user.getRatings().remove(rating);
-		} else {
-			throw new Exception("User doesnt have this rating");
+	public static void addRating(int userID,int movieID,int rating, long timestamp) {
+		try {
+			int[] ratings = {-5,-3,1,3,5};
+			if(users.containsKey(userID) && movies.containsKey(movieID)) {
+				if(ArrayUtils.contains(ratings, rating) && timestamp > 0) {
+					Rating newRating = new Rating(userID, movieID, rating, timestamp);
+					boolean lowerUser = removeDuplicates(userID, movieID, rating, timestamp, users.get(userID).getRatings());
+					boolean lowerMovie = removeDuplicates(userID, movieID, rating, timestamp, movies.get(movieID).getRatings());
+					if(!lowerUser && !lowerMovie) {
+			     	   users.get(userID).addRating(newRating);
+			     	   movies.get(movieID).addRating(newRating);
+			        }
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("something went wrong");
+		}
+	}
+	
+	public static void removeRating(User user, Rating rating) {
+		try {
+			if(user.getRatings().contains(rating)) {
+				user.getRatings().remove(rating);
+			} 
+		} catch(Exception e) {
+			System.out.println("User doesnt have this rating");
 		}
 	}
 	
 	
-	public static List<Rating> getUserRatings(int userID) throws Exception{
-		if(users.containsKey(userID)) {
-			return users.get(userID).getRatings();
-		} else {
-			throw new Exception("movie id doesnt exist");
+	public static List<Rating> getUserRatings(int userID){
+		try {
+			if(users.containsKey(userID)) {
+				return users.get(userID).getRatings();
+			} 
+		} catch (Exception e) {
+			System.out.println("movie id doesnt exist");
 		}
+		return null;
 	}
 	
-	public static List<Movie> getUserRecommendations(int userID) throws Exception {
+	public static List<Movie> getUserRecommendations(int userID)  {
 		double similarity = 0;
 		List<Double> similarities = new ArrayList<Double>();
 		
@@ -281,7 +253,7 @@ public class RecommenderAPI {
 	
 	
 
-	public static List<Movie> getTopTenMovies() throws Exception{
+	public static List<Movie> getTopTenMovies() {
 		List<Rating> allRatings = new ArrayList<Rating>();
 		List<Double> allTotals = new ArrayList<Double>();
 		List<Movie> tenHighest = new ArrayList<Movie>();
@@ -320,34 +292,6 @@ public class RecommenderAPI {
 		
 	}
 	
-	
-//	public void addUser(String firstName, String lastName,int age,String gender,String occupation);
-//	public void removeUser(int userID);
-//	public void addMovie(String title,int year, String releaseDate, String url);
-//	public void addRating(int userID,int movieID,int rating);
-//	public Movie getMovie(int movieID);
-//	public Map<Integer, Integer> getUserRatings(int userID);
-//	public User getUserRecommendations(int userID);
-//	public List<Movie> getTopTenMovies();
-//	public Map<Integer,List<Map>>load();
-//	public void write();
-	
-	public static void displayUserRatings(int userID) {
-		System.out.println("\n" + users.get(userID).getFirstName() + " rated the following movies: ");
-		for(Rating rating : users.get(userID).getRatings()) {
-			System.out.println("Movie: " + movies.get(rating.getObject2()).getTitle() + " " + rating.getTimestamp());
-			System.out.println("Rating: " + rating.getRating());
-		}
-	}
-	
-	public static void displayMovieRatings(int movieID) {
-		System.out.println("\n" + movies.get(movieID).getTitle()+" was rated by the following users:");
-		for(Rating rating : movies.get(movieID).getRatings()) {
-			System.out.println("User: " + users.get(rating.getObject1()).getFirstName());
-			System.out.println("Rating: " + rating.getRating());
-		}
-	}
-	
 	public static boolean removeDuplicates(int user, int movie, int rating, Long timestamp, List<Rating> ratings) {
 		boolean lower = false;
 		List<Rating> dupRatings = new ArrayList<Rating>();
@@ -373,24 +317,32 @@ public class RecommenderAPI {
 	
 	//XML//
 	
-		public static void load() throws Exception {
-			xml.read();
-			genres = (Map<Integer, String>) xml.pop();
-			movies = (Map<Integer, Movie>) xml.pop();
-			emailIndex = (Map<String, User>) xml.pop();
-			users = (Map<Integer, User>) xml.pop();
-			movieCounter = (Integer) xml.pop();
-			userCounter = (Integer) xml.pop();
+		public static void load() {
+			try {
+				xml.read();
+				genres = (Map<Integer, String>) xml.pop();
+				movies = (Map<Integer, Movie>) xml.pop();
+				emailIndex = (Map<String, User>) xml.pop();
+				users = (Map<Integer, User>) xml.pop();
+				movieCounter = (Integer) xml.pop();
+				userCounter = (Integer) xml.pop();
+			} catch (Exception e) {
+				System.out.println("loading unsuccessful");
+			}
 			
 		}
 		
-		public static void store() throws Exception {
-			xml.push(userCounter);
-			xml.push(movieCounter);
-			xml.push(users);
-			xml.push(emailIndex);
-			xml.push(movies);
-			xml.push(genres);
-			xml.write();
+		public static void store() {
+			try {
+				xml.push(userCounter);
+				xml.push(movieCounter);
+				xml.push(users);
+				xml.push(emailIndex);
+				xml.push(movies);
+				xml.push(genres);
+				xml.write();
+			} catch(Exception e) {
+				System.out.println("string unsuccessful");
+			}
 		}
 }
