@@ -57,7 +57,6 @@ public class Profile extends Controller
   
   public static void deleteUser(Integer id) throws Exception{
 	  RecommenderAPI rec = Accounts.getRecommender();
-	  rec.emailIndex.remove(rec.users.get(id).getEmail());
 	  rec.users.remove(id);
 	  Accounts.index();
   }

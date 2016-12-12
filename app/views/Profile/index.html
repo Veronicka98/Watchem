@@ -20,14 +20,15 @@
 
 
 		<div class="profiledetails" style="background-color: black;">
-			  <div class="image" style="width:50%;background-color:black;display:inline;float:left;">
-			  	<img class="profile" src="/../public/images/topten/8.jpg">
+			  <div class="image" style="height: 500px;background-color:black;display:inline;float:left;">
+			  	<img class="profile" src="/../public/images/mkaa.jpg">
 			  </div>
 			  
 			  <div class="details" style="margin-left: 20px;width:48%;height:100%;background-color:black;display:inline;float:left;padding: 15px;">
 			  	<p>${user.getFirstName()} ${user.getLastName()}</p>
 			  	<p>${user.getGender()} ${user.getAge()}</p>
-			  	<p>${user.getOccupation()}</p>
+			  	<p>Occupation: ${user.getOccupation()}</p>
+			  	<p>E-mail: ${user.getEmail()}</p>
 			  	<p>Favourite Movie: ${user.getStatusText()}</p>
 			  	
 
@@ -54,7 +55,7 @@
 		
 		
 		
-		<div style="background-color: black;width:97%;margin: 0 auto;float: left;margin-left: 1.5%;margin-top: 15px;padding-bottom:15px;">
+		<div style="background-color: black;width:97%;margin: 0 auto;float: left;margin-left: 1.5%;margin-top: 25px;padding-bottom:15px;">
 		  
 		  <div class="ui center aligned top aligned stackable grid">
 			 <div class="sixteen wide column">

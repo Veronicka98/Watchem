@@ -1,10 +1,7 @@
 package models;
 
-import static com.google.common.base.MoreObjects.toStringHelper;
-
 import java.util.Arrays;
 
-import com.google.common.base.Objects;
 import Driver.Data;
 
 import play.db.jpa.Model;
@@ -34,20 +31,8 @@ public class Rating extends Model{
 		
 	}
 	
-	@Override  
-	  public int hashCode()  
-	  {  
-	     return Objects.hashCode(this.object1, this.object2, this.rating);  
-	  }  
 	  
-	  @Override
-	  public String toString()
-	  {
-	    return toStringHelper(this).addValue(object1)
-	                               .addValue(object2)
-	                               .addValue(rating)
-	                               .toString();
-	  }
+	  
 	
 
 	public int getObject1() {

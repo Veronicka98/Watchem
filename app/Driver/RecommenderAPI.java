@@ -18,7 +18,6 @@ import java.util.Vector;
 
 import org.apache.commons.lang.ArrayUtils;
 
-import edu.princeton.cs.introcs.Stopwatch;
 import models.Movie;
 import models.Rating;
 import models.User;
@@ -37,13 +36,13 @@ public class RecommenderAPI {
 	public static Map<Integer, Movie> movies = new HashMap<Integer, Movie>();
 	public static Map<Integer, String> genres = new HashMap<Integer, String>();
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 				
 //		data.loadOriginalData();
 //		userCounter = users.size()+1;
 //		movieCounter = movies.size()+1;
 //    	store();
-		
+//		
 		//.takes about 9 seconds for big data 
 		//load();
 		
@@ -332,7 +331,7 @@ public class RecommenderAPI {
 			
 		}
 		
-		public static void store() {
+		public static void store() throws Exception{
 			try {
 				xml.push(userCounter);
 				xml.push(movieCounter);

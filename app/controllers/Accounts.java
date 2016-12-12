@@ -9,7 +9,7 @@ import models.*;
 
 public class Accounts extends Controller {
 	
-	static RecommenderAPI rec = new RecommenderAPI();
+	static RecommenderAPI rec;
 	
 	
 	
@@ -61,6 +61,7 @@ public class Accounts extends Controller {
 
 	public static void index() throws Exception
 	  {
+		rec = new RecommenderAPI();
 		if(!rec.users.isEmpty()) {
 			rec.store();
 		}
@@ -77,7 +78,7 @@ public class Accounts extends Controller {
 	    }
 	    else
 	    {
-	    	List<User> users = User.findAll();
+	    	Collection<User> users = rec.users.values();
 	        render(users);
 	    }
 		    
@@ -101,14 +102,13 @@ public class Accounts extends Controller {
 	  
 	  public static void register(String firstName, String lastName, int age, String gender, String occupation, String email, String password) throws Exception
 	  {
-	    User user = new User(firstName, lastName, age, gender, occupation);
+	    
 	    rec.addUser(firstName, lastName, age, gender, occupation);
 	    User thisUser = rec.users.get(rec.getUserCounter()-1);
 	    rec.emailIndex.remove(thisUser.getEmail());
 	    thisUser.setPassword(password);
 	    thisUser.setEmail(email);
 	    rec.emailIndex.put(thisUser.getEmail(), thisUser);
-	    user.save();
 	    
 	    index();
 	  }

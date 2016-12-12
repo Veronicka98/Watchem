@@ -156,6 +156,7 @@ div.myratings {
 	float: left;
 	font-family: 'Press Start 2P', cursive;
 	padding-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 div.myratingsprofile {
@@ -181,6 +182,7 @@ div.allmovies {
 	float: right;
 	font-family: 'Press Start 2P', cursive;
 	padding-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 html  {
@@ -199,6 +201,7 @@ div.members {
 
 div.profiledetails {
 	width: 97%;
+	height: 500px;
 	color: white;
 	background-color: black;
 	margin: 0 auto;
@@ -225,7 +228,7 @@ div.fullmovie {
 
 div.mymovie {
 	position:fixed;
-    top: 15%;
+    top: 140px;
     left: 15%;
 	background-color: rgba(0,0,0,0.5);
 	width: 70%;
