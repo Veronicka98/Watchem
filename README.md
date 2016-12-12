@@ -11,4 +11,4 @@
 
 ### Contribution guidelines ###
 
-* Tests were written according to Right B.I.C.E.P.approach
+* Tests were written according to Right B.I.C.E.P. approach
