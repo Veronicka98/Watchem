@@ -1,8 +1,8 @@
-# README #
+# watchem #
 
 ### What is this repository for? ###
 
-* Movie recommender system based on data collected by MovieLens. 
+* Movie recommender system based on data collected by MovieLens
 * User receives recommendations based on their own ratings
 * User can register, login and delete their profile
 * User can rate and add movies, delete their ratings and change their profile information
