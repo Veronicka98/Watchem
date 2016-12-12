@@ -1,0 +1,105 @@
+#{extends 'main.html' /}
+#{set title:'public profile' /}
+
+      <div class="ui segment" style="background-color:white;">
+		<nav class="ui secondary main menu">
+		  <div class="left menu">
+			<a class="item" href="/home">
+			  watchem
+			</a>
+		  </div>
+		  <div class="right menu">
+  		    <a class="ui item" href="/home">Home</a>      
+  			<a class="ui item" href="/members">Members</a>   
+ 			<a class="ui item" href="/profile">My Profile</a> 
+  			<a class="ui item" href="/editprofile">Account Settings</a> 
+  			<a class="ui item" href="/logout">Logout</a> 
+  	   	  </div>
+		</nav> 
+	  </div> 
+
+
+		<div class="profiledetails" style="background-color: black;">
+			  <div class="image" style="width:50%;background-color:black;display:inline;float:left;">
+			  	<img class="profile" src="/../public/images/mkaa.jpg">
+			  </div>
+			  
+			  <div class="details" style="margin-left: 20px;width:48%;height:100%;background-color:black;display:inline;float:left;padding: 15px;">
+			  	<p>${user.getFirstName()} ${user.getLastName()}</p>
+			  	<p>${user.getGender()} ${user.getAge()}</p>
+			  	<p>Occupation: ${user.getOccupation()}</p>
+			  	<p>E-mail: ${user.getEmail()}</p>
+			  	<p>Favourite Movie: ${user.getStatusText()}</p>
+			  	
+			  </div>
+		</div>
+				
+		
+		<div style="width:97%">
+		
+		<div class="myratingsprofile">
+		   <div class="ui center aligned top aligned stackable grid">
+			 <div class="sixteen wide column">
+				<div class="row tt">
+    				<p>${user.getFirstName()} Ratings</p>
+    			</div>
+    		 </div>
+      			<div class="row">
+			        <div class="six wide column">
+			          title
+			        </div>
+			        <div class="three wide column">
+			         rating
+			        </div>
+			        
+		        </div>
+		    #{list items:ratings, as:'rating'}
+		        <div class="row">
+		        <div class="six wide column">
+		         	<a style="color: white;" href="/movie/${allmovies.get(rating.getObject2()).getMovieID()}">
+				      ${allmovies.get(rating.getObject2()).getTitle()}
+				     </a>
+		        </div>
+		        <div class="three wide column">
+			        <div>${rating.getRating()}</div>
+		        </div>
+		      </div>
+		        
+		    #{/list}
+		    </div> 
+		  
+		  </div>
+		  
+		  
+	
+		  <div class="allmovies">
+			 <div class="ui center aligned top aligned stackable grid">
+			 <div class="sixteen wide column">
+				<div class="row tt">
+    				<p>All Movies</p>
+    			</div>
+    			</div>
+      			<div class="row">
+			        <div class="six wide column">
+			          title
+			        </div>
+			        
+		        </div>
+		    #{list allmovies.values(), as:'movie'}
+		        <div class="row">
+		        <div class="six wide column">
+		         	<a style="color: white;" href="/movie/${movie.getMovieID()}">
+				      ${movie.getTitle()}
+				     </a>
+		        </div>
+		        </div>
+		        
+		    #{/list} 
+		  
+		  </div>
+		  </div>
+		  
+		  </div>
+		  
+		  
+ 

@@ -1,11 +1,9 @@
 package models;
 
-import com.google.common.base.Objects;
 
 import Driver.Data;
 import models.Rating;
 
-import static com.google.common.base.MoreObjects.toStringHelper;
 
 import java.util.ArrayList;
 
@@ -68,24 +66,7 @@ public class User extends Model {
 	  }
 	  
 	  
-	  @Override  
-	  public int hashCode()  
-	  {  
-	     return Objects.hashCode(this.lastName, this.firstName, this.email, this.password);  
-	  }  
-	  
-	  @Override
-	  public String toString()
-	  {
-	    return toStringHelper(this).addValue(firstName)
-	                               .addValue(lastName)
-	                               .addValue(age)
-	                               .addValue(gender)  
-	                               .addValue(occupation)
-	                               .addValue(email)
-	                               .addValue(password)
-	                               .toString();
-	  }
+	
 	  
 	  public int getUserID() {
 		  return userID;

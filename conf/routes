@@ -29,6 +29,9 @@ POST	/deleteuser/{id}						Profile.deleteUser
 POST    /deletemovie/{id}						Profile.deleteMovie
 POST    /profile/rate/{id}						MoviePage.addRating
 
+#Public Profile
+GET		/user/{id}								PublicProfile.index
+
 #Move page
 GET		/movie/{id}								MoviePage.index
 POST	/addmovie								MoviePage.addMovie

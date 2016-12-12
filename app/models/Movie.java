@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.google.common.base.Objects;
 
 import Driver.Data;
 import models.Rating;
@@ -43,12 +42,6 @@ public class Movie extends Model {
 		this.genre = genre;
 		ratings = new ArrayList<Rating>();
 	}
-	
-	@Override  
-	  public int hashCode()  
-	  {  
-	     return Objects.hashCode(this.title, this.videoReleaseDate, this.url, this,genre);  
-	  }  
 	
 	public String getTitle() {
 		return title;

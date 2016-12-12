@@ -22,7 +22,11 @@
 		  #{/else}
         </div>
         <div class="four wide column">
-	        <div> ${user.getFirstName()} ${user.getLastName()} </div>
+        	<div>
+		        <a style="color: white;" href="/user/${user.getUserID()}">
+			      ${user.getFirstName()} ${user.getLastName()}
+			    </a>
+            </div>
         </div>
         <div class="four wide column">
 	        <div> ${user.getSimilarity()}</div>
