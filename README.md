@@ -31,4 +31,4 @@ play run
 
 
 ### Deployment ###
-Web app deployed to Heroku using small data set at [watchem.herokuapp.com](Link URL)
+Web app deployed to Heroku using small data set at [watchem.herokuapp.com](watchem.herokuapp.com)
