@@ -35,4 +35,3 @@ play run
 
 ### Deployment ###
 Web app deployed to Heroku using small data set at [watchem.herokuapp.com](http://watchem.herokuapp.com/)
->>>>>>> dc75e32d2e2e410754f1599670e1f6023db2aee6
