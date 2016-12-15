@@ -26,10 +26,6 @@ play run
 
 
 ### Contribution guidelines ###
-
-<<<<<<< HEAD
-* Tests were written according to Right B.I.C.E.P. approach
-=======
 * Tests were written according to Right B.I.C.E.P. approach
 
 
