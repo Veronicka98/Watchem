@@ -28,3 +28,7 @@ play run
 ### Contribution guidelines ###
 
 * Tests were written according to Right B.I.C.E.P. approach
+
+
+### Deployment ###
+Web app deployed to Heroku using small data set at watchem.herokuapp.com
