@@ -201,9 +201,7 @@ div.members {
 
 div.profiledetails {
 	width: 97%;
-	height: 500px;
 	color: white;
-	background-color: black;
 	margin: 0 auto;
 	text-align: left;
 	font-family: 'Press Start 2P', cursive;
@@ -228,7 +226,7 @@ div.fullmovie {
 
 div.mymovie {
 	position:fixed;
-    top: 140px;
+    top: 120px;
     left: 15%;
 	background-color: rgba(0,0,0,0.5);
 	width: 70%;

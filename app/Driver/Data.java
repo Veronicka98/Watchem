@@ -40,7 +40,7 @@ public class Data {
 	}
 	
 	public static void loadUsers() throws Exception {
-	      InputStream usersFile = new FileInputStream("./moviedata/users5.dat");
+	      InputStream usersFile = new FileInputStream("./bigMovieData/users.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inUsers = new BufferedReader(new InputStreamReader(usersFile));
 	      
@@ -72,7 +72,7 @@ public class Data {
 	}
 	
 	public static void loadGenres() throws Exception {
-	      InputStream genreFile = new FileInputStream("./moviedata/genre.dat");
+	      InputStream genreFile = new FileInputStream("./bigMovieData/genre.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inGenres = new BufferedReader(new InputStreamReader(genreFile));
 	      
@@ -99,7 +99,7 @@ public class Data {
 	}
 	
 	public static void loadMovies() throws Exception {
-	      InputStream movieFile = new FileInputStream("./moviedata/items5.dat");
+	      InputStream movieFile = new FileInputStream("./bigMovieData/items.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inMovies = new BufferedReader(new InputStreamReader(movieFile));
 	      
@@ -143,7 +143,7 @@ public class Data {
 	
 	
 	public static void addRatings() throws Exception {
-		InputStream ratingsFile = new FileInputStream("./moviedata/ratings5.dat");
+		InputStream ratingsFile = new FileInputStream("./bigMovieData/ratings.dat");
 	      @SuppressWarnings("resource")
 		  BufferedReader inGenres = new BufferedReader(new InputStreamReader(ratingsFile));
 	      
@@ -170,7 +170,6 @@ public class Data {
 		               
 		               boolean lower = r.removeDuplicates(user, movie, rating, timestamp, r.users.get(user).getRatings());
 		               if(!lower) {
-		            	   System.out.println("Rating added to " + r.users.get(user).getFirstName() + " " + lower);
 		            	   r.users.get(user).addRating(newRating);
 		            	   r.movies.get(movie).addRating(newRating);
 		               }
