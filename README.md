@@ -11,16 +11,12 @@
 
 * to import project into eclipse cd into the project and 
 ```
-#!java
-
 play eclipsify
 ```
 
 
 * to deploy locally cd into the project and 
 ```
-#!java
-
 play run
 ```
 
