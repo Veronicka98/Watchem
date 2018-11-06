@@ -27,3 +27,20 @@ play run
 
 ### Deployment ###
 Web app deployed to Heroku using small data set at [watchem.herokuapp.com](http://watchem.herokuapp.com/)
+
+
+### Screenshots ###
+
+<img src="./images/home.PNG"/>
+
+<p float="left">
+    <img src="./images/login.PNG" width="48%"/>
+    <img src="./images/signup.PNG" width="48%"/>
+</p>
+
+<img src="./images/home1.PNG"/>
+<img src="./images/profile.PNG"/>
+<img src="./images/list.PNG"/>
+<img src="./images/rating.PNG"/>
+<img src="./images/update.PNG"/>
+<img src="./images/users.PNG"/>
